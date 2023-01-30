@@ -1,13 +1,18 @@
+{{> header}}
+{{> menu}}
     <div class="contenedor">
-        <form action="ciudades" method="post">
+        <div class="contenido">
+            <form action="ciudades" method="post">
             <label for="ciudad">Ciudad</label>
-            <input type="text" id="ciudad" name="ciudad" class="input-formulario" value="Saltillo">
+            <input type="text" id="ciudad" name="ciudad" class="input-formulario" placeholder="Ingrese el nombre de ciudad">
             <select name="estado" id="estado">
                 {{#each estados}}
                     <option value="{{this.id}}" >{{this.nombre}}</option>
                 {{/each}}
             </select>
-            <button type="submit">Insertar</button>
+            <button type="submit" onclick="alert('Se ha ingesado la ciudad')">Insertar</button>
         </form>
+        </div>
         
     </div>
+{{> footer }}

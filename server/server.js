@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3000;
 
 
-hbs.registerPartials( './views/partials', function (err) {});
+hbs.registerPartials( 'server/views/partials', function (err) {});
 app.set('view engine', 'hbs');
 app.set("views",  "server/views");
 
