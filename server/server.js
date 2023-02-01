@@ -9,6 +9,10 @@ const PORT = 3000;
 
 
 hbs.registerPartials( 'server/views/partials', function (err) {});
+hbs.registerHelper('ifeq', function (a, b, options) {
+    if (a == b) { return options.fn(this); }
+    return options.inverse(this);
+});
 app.set('view engine', 'hbs');
 app.set("views",  "server/views");
 

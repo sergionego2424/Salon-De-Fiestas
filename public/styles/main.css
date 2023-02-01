@@ -14,16 +14,19 @@
     justify-content: center;
     align-items: center;
     padding: 200px 0;
+    flex-wrap: wrap;
     
 }
+
 .contenedor .contenido{
-    position: absolute;
+    margin:15px 0;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
+
+
 .contenido form{
     display: flex;
     flex-direction: column;
@@ -63,4 +66,54 @@
     color:#000;
     background-color: rgb(130, 98, 98);
     cursor: pointer;
+}
+.contenido .error-message {
+    margin: 0 10px;
+    color:white;
+}
+.contenido table{
+    width: 80%;
+}
+.contenido table td{
+    font-size: 20px;
+    color:white;
+    text-align: center;
+}
+.contenido table thead td{
+    font-weight:900;
+   
+}
+.contenido table tbody td{
+    padding: 10px;
+}
+.contenido table tbody tr td input, select, .btn-eliminar{
+    width: 70%;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+    border: 0px;
+}
+.contenido table tbody tr td .btn-eliminar{
+    font-weight: 900;
+    color:white;
+    background-color: rgb(227, 58, 58);
+}
+.contenido table tbody tr td .btn-eliminar:hover{
+    cursor: pointer;
+    background-color: rgb(131, 21, 21);
+}
+
+.contenido .listo{
+    width: 20%;
+    border: 0px;
+    border-radius: 5px;
+    height: 40px;
+    font-weight: 900;
+    color: white;
+    background-color: rgb(63, 200, 39);
+}
+.contenido .listo:hover{
+
+    cursor: pointer;
+    background-color: rgb(42, 125, 27);
 }

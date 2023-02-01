@@ -1,0 +1,51 @@
+{{> header}}
+{{> menu}}
+
+<div class="contenedor ">
+    <div class="contenido">
+        <table>
+            <thead>
+                <tr>
+                    <td>idCiudad</td>
+                    <td>idEstado</td>
+                    <td>Nombre</td>
+                </tr>
+            </thead>
+
+            {{#each ciudades}}
+
+            <tr>
+
+                <td class="idCiudad">{{idCiudad}}</td>
+                <td>
+                    <select class="idEstado" name="estado" id="estado">
+                        {{#each @root.estados}}
+                      
+                            {{#ifeq this.id ../this.idEstado}}
+                             <option value="{{this.id}}">{{this.nombre}}</option>
+         
+                            {{/ifeq}}
+                        {{/each}}
+                        {{#each @root.estados}}
+                        <option value="{{this.id}}">{{this.nombre}}</option>
+                        {{/each}}
+                    </select>
+                </td>
+                <td><input type="text" class="nombreCiudad" value="{{nombre}}"></td>
+                <td>
+                    <button class="btn-eliminar" value="{{idCiudad}}">Eliminar</button>
+                </td>
+            </tr>
+
+            {{/each}}
+            </tbody>
+        </table>
+
+    </div>
+    <div class="contenido btnlisto">
+        <button class="listo" id="listo">Listo</button>
+    </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+{{> footer}}

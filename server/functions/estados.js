@@ -21,7 +21,7 @@ const insertar = (conn) => {
 
 const getEstados = (conn) => {
     let estados = [];    
-
+        console.log(estados)
         conn.query("SELECT * FROM estado",(e, result) => {
             if(e) throw e;
             for(let i = 0 ; i < result.length ; i++){
