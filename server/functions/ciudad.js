@@ -30,6 +30,19 @@ const deleteCiudad = (conn, id) => {
         console.log('eliminado la ciudad')
     
 }
+const ciudadRepetida = (conn, nombre) => {
+    let contador = {};
+    conn.query("CALL ciudadesRepetidas ('"+nombre+"')",(e, result) => {
+        if(e) throw e;
+        contador.resutado = result;
+    });
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(...contador.resutado);
+        },200 )
+    });
+
+}
 const getCiudades = (conn) => {
     let ciudades = [];    
 
@@ -55,4 +68,4 @@ const getCiudades = (conn) => {
     
 }
 
-module.exports = { insertarCiudad, getCiudades ,deleteCiudad, updateCiudad};
+module.exports = { insertarCiudad, getCiudades ,deleteCiudad, updateCiudad, ciudadRepetida};
